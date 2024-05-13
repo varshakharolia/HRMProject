@@ -1,0 +1,14 @@
+.container-fluid{
+    padding:0;
+}
+
+label{
+    display: block;
+
+}
+
+input::placeholder{
+    color:lightgray;
+
+    font-style: italic;
+}

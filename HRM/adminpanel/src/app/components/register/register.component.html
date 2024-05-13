@@ -1,0 +1,88 @@
+<div class="container p-5">
+    <div class="card">
+        <div class="card-header bg-secondary text-white">
+            <h1 class="text-light">Register Form</h1>
+        </div>
+        <div class="card-body p-3">
+            
+            <form [formGroup]="userRegForm" (ngSubmit)="register()">
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="firstName" class="form-label">First Name</label>
+                        <input type="text" class="form-control" id="firstName" name="firstName" formControlName="firstName" placeholder="Enter here your First Name" required>
+                        
+                        <div *ngIf="userRegForm.get('firstName')?.invalid && (userRegForm.get('firstName')?.dirty ||  userRegForm.get('firstName')?.touched)">
+                            <div *ngIf="userRegForm.get('firstName')?.errors">
+
+                            </div>
+                            <p class="text-danger">First Name Required</p>
+                        </div>
+                    
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="lastName" class="form-label">Last Name</label>
+                      
+                        <input type="text" class="form-control" id="lastName" name="lastName" formControlName="lastName" placeholder="Enter here your Last Name" required>
+                        <div *ngIf="userRegForm.get('lastName')?.invalid && (userRegForm.get('lastName')?.dirty ||  userRegForm.get('lastName')?.touched)">
+                            <div *ngIf="userRegForm.get('lastName')?.errors">
+
+                            </div>
+                            <p class="text-danger">Last Name Required</p>
+                        </div>
+                    
+                   
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="contact" class="form-label">Contact</label>
+                       
+                        <input type="text" class="form-control" id="contact" name="contact" formControlName="contact" placeholder="Enter here your Contact" required>
+                        <div *ngIf="userRegForm.get('contact')?.invalid && (userRegForm.get('contact')?.dirty ||  userRegForm.get('contact')?.touched)">
+                            <div *ngIf="userRegForm.get('contact')?.errors">
+
+                            </div>
+                            <p class="text-danger">Contact NO Required</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="email" class="form-label">Email</label>
+                      
+                        <input type="email" class="form-control" id="email" name="email" formControlName="email" placeholder="Enter here your Email" required>
+                        <div *ngIf="userRegForm.get('email')?.invalid && (userRegForm.get('email')?.dirty ||  userRegForm.get('email')?.touched)">
+                            <div *ngIf="userRegForm.get('email')?.errors">
+
+                            </div>
+                            <p class="text-danger">E-mail Required</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="password" class="form-label">Password</label>
+                       
+                        <input type="password" class="form-control" id="password" name="password" formControlName="password" placeholder="Enter here your Password" required>
+                        <div *ngIf="userRegForm.get('password')?.invalid && (userRegForm.get('password')?.dirty ||  userRegForm.get('password')?.touched)">
+                            <div *ngIf="userRegForm.get('password')?.errors">
+
+                            </div>
+                            <p class="text-danger">Password Required</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="confirmPassword" class="form-label">Confirm Password</label>
+                      
+                        <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" formControlName="confirmPassword" placeholder="Enter here your Confirm Password" required>
+                        <div *ngIf="userRegForm.get('confirmPassword')?.invalid && (userRegForm.get('confirmPassword')?.dirty ||  userRegForm.get('confirmPassword')?.touched)">
+                            <div *ngIf="userRegForm.get('confirmPassword')?.errors">
+
+                            </div>
+                            <p class="text-danger">ConfirmPassword Required</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                <div class="col-md-12">
+                    <button type="submit" class="btn btn-primary float-end" (click)="register()" [disabled]="!userRegForm.valid">Register</button>
+                </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
